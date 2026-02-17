@@ -1,0 +1,49 @@
+{
+  "common": {
+    "input_root_dir": "./input",
+    "output_dir": "./output",
+    "enhanced_image_format": "png"
+  },
+  
+  "vid_caption": {
+    "model": "gpt-5-mini",
+    "enable_frame_sampling": true,
+    "frame_sampling_fps": 1,
+    "media_resolution": "default",
+    "max_items": 600,
+    "shuffle": true,
+    "concurrency": 8
+  },
+  
+  "safety": {
+    "max_error_rate": 0.5,
+    "max_consecutive_429": 3,
+    "max_file_count": 1000,
+    "check_file_count_interval": 50,
+    "request_delay_seconds": 0.5,
+    "enable_safety_monitor": true,
+    "max_rpm": 60,
+    "rate_limits": {
+      "gpt-5-nano": {
+        "tpm": 400000,
+        "rpm": 10
+      },
+      "gpt-5-mini": {
+        "tpm": 400000,
+        "rpm": 10
+      },
+      "gpt-5-pro": {
+        "tpm": 30000,
+        "rpm": 5
+      },
+      "gpt-5.1": {
+        "tpm": 2000000,
+        "rpm": 10
+      },
+      "gpt-5": {
+        "tpm": 500000,
+        "rpm": 5
+      }
+    }
+  }
+}

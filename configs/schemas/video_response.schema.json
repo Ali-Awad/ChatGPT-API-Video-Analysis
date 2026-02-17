@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "scene description": { "type": "string" },
+    "weather": {
+      "type": "object",
+      "properties": {
+        "condition": { "type": "string" },
+        "winter weather": { "type": "boolean" }
+      },
+      "required": ["condition", "winter weather"],
+      "additionalProperties": false
+    },
+    "camera view": { "type": "string" },
+    "hazardous event": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "present": { "type": "boolean", "const": true },
+            "cause": {
+              "type": ["string", "null"]
+            },
+            "effect": {
+              "type": ["string", "null"]
+            },
+            "entities involved": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
+          },
+          "required": ["present", "cause", "effect", "entities involved"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "present": { "type": "boolean", "const": false },
+            "cause": {
+              "type": ["string", "null"]
+            },
+            "effect": {
+              "type": ["string", "null"]
+            },
+            "entities involved": {
+              "type": "null"
+            }
+          },
+          "required": ["present", "cause", "effect", "entities involved"],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "scene description",
+    "weather",
+    "camera view",
+    "hazardous event"
+  ],
+  "additionalProperties": false
+}
