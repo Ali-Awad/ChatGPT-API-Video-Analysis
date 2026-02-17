@@ -1,4 +1,4 @@
-# ChatGPT API Video Analysis
+# ChatGPT API Traffic Video Analysis
 
 ![ChatGPT API Video Analysis](assets/repo-banner.png)
 
