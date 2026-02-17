@@ -1,5 +1,7 @@
 # ChatGPT API Video Analysis
 
+![ChatGPT API Video Analysis](assets/repo-banner.png)
+
 A Python application that uses the OpenAI GPT API to analyze dashcam and traffic video footage. It extracts frames from videos, sends them to GPT vision models, and returns structured JSON describing the scene, weather conditions, camera perspective, and any hazardous events.
 
 ## Features
